@@ -36,6 +36,35 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Change icon if needed
+            const icon = menuToggle.querySelector('i');
+            if (icon && window.lucide) {
+                const isOpened = navLinks.classList.contains('active');
+                icon.setAttribute('data-lucide', isOpened ? 'x' : 'menu');
+                window.lucide.createIcons();
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon && window.lucide) {
+                    icon.setAttribute('data-lucide', 'menu');
+                    window.lucide.createIcons();
+                }
+            });
+        });
+    }
+
     // Navbar transparency logic
     const navbar = document.querySelector('.navbar');
     if (navbar) {
