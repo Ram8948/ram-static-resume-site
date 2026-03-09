@@ -300,8 +300,8 @@ h3,
 
 .avatar-wrapper {
     position: relative;
-    width: 380px;
-    height: 380px;
+    width: 300px;
+    height: 300px;
 }
 
 .avatar-main {
@@ -309,12 +309,11 @@ h3,
     height: 100%;
     border-radius: 40px;
     background: var(--bg-secondary);
-    padding: 4px;
+    padding: 2px;
     position: relative;
     z-index: 10;
     overflow: hidden;
-    box-shadow: var(--shadow-floating);
-    transform: rotate(-3deg);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
     transition: var(--transition-smooth);
 }
 
@@ -332,18 +331,7 @@ h3,
 }
 
 .avatar-glow {
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 120%;
-    height: 120%;
-    background: conic-gradient(from 0deg,
-            transparent,
-            var(--accent-primary),
-            var(--accent-secondary),
-            transparent);
-    animation: rotate 6s linear infinite;
-    z-index: 0;
+    display: none;
 }
 
 @keyframes rotate {
@@ -369,13 +357,13 @@ h3,
 }
 
 .stat-1 {
-    top: 10%;
-    left: -60px;
+    top: 5%;
+    left: -30px;
 }
 
 .stat-2 {
-    bottom: 10%;
-    right: -60px;
+    bottom: 5%;
+    right: -30px;
 }
 
 .stat-val {

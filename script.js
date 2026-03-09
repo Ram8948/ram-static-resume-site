@@ -38,29 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar transparency logic
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 11, 16, 0.95)';
-            navbar.style.padding = '10px 0';
-        } else {
-            navbar.style.background = 'rgba(10, 11, 16, 0.85)';
-            navbar.style.padding = '15px 0';
-        }
-    });
-
-    // Interactive floating stats on mouse move (Subtle tilt effect)
-    const heroVisual = document.querySelector('.hero-visual');
-    if (heroVisual) {
-        heroVisual.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
-            const moveX = (clientX - centerX) / 40;
-            const moveY = (clientY - centerY) / 40;
-
-            const avatarWrapper = document.querySelector('.avatar-wrapper');
-            if (avatarWrapper) {
-                avatarWrapper.style.transform = `rotateY(${moveX}deg) rotateX(${-moveY}deg)`;
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 11, 16, 0.95)';
+                navbar.style.padding = '10px 0';
+            } else {
+                navbar.style.background = 'rgba(10, 11, 16, 0.85)';
+                navbar.style.padding = '15px 0';
             }
         });
     }
